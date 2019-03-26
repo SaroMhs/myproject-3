@@ -9,9 +9,12 @@ import Signup from './components/auth/Signup.js';
 import Login from './components/auth/Login.js';
 import Profile from './components/auth/Profile.js';
 import AuthService from './components/auth/auth-service.js';
+import Detailsprof from './components/auth/Detailsprof';
+import Myprofil from './components/auth/Myprofil';
+import Board from './components/auth/Board';
 
 class App extends Component {
-  state = {
+  /* state = {
     user: null
   };
 
@@ -32,7 +35,7 @@ class App extends Component {
 
   componentDidMount() {
     this.fetchUser();
-  }
+  } */
 
   render() {
     return (
@@ -41,23 +44,7 @@ class App extends Component {
 
           <Switch>
             <Route exact path="/" render={() => (
-              <>
-                {this.state.user && this.state.user._id ? (
-                  <Profile user={this.state.user} updateUser={this.updateUser} />
-                ) : (
-                  <Popin one={(
-                    <>
-                      <h1>IronProfile</h1>
-                      <p>Today we will create an app with authorization, adding some cool styles !</p>
-          
-                      <div className="cta">
-                        <Link className="btn" to="/signup">Sign up</Link>
-                        <Link className="btn" to="/login">Log in</Link>
-                      </div>
-                    </>
-                  )} />
-                )}
-              </>
+              <h1>Home Page </h1>
             )} />
 
             <Route exact path="/signup" render={(props) => (
@@ -67,6 +54,19 @@ class App extends Component {
             <Route exact path="/login" render={(props) => (
               <Login updateUser={this.updateUser} history={props.history} />
             )} />
+
+            <Route exact path="/detailsprof" render={(props) => (
+              <Detailsprof/>
+            )} />
+
+            <Route exact path="/myprofil" render={(props) => (
+              <Myprofil/>
+            )} />
+
+            <Route exact path="/board" render={(props) => (
+              <Board/>
+            )} />
+
           </Switch>
 
           

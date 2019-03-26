@@ -6,7 +6,12 @@ import Popin from '../Popin.js';
 import AuthService from './auth-service.js';
 
 export default class extends React.Component {
-  state = {
+  render (){
+    return (
+      <h1> Sign Up</h1>
+    )
+  };
+  /* state = {
     username: "",
     password: "",
     campus: "",
@@ -58,7 +63,7 @@ export default class extends React.Component {
 
             <p>
               <label>
-                <em>Campus</em>
+                <em>TEST</em>
                 <select name="campus" value={this.state.campus} onChange={this.handleChange}>
                   <option value=""></option>
                   <option value="Madrid">Madrid</option>
@@ -106,5 +111,5 @@ export default class extends React.Component {
         </>
       )} />
     );
-  }
+  } */
 }

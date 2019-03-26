@@ -1,12 +1,20 @@
 import React from 'react';
 
 import {Link} from 'react-router-dom';
-
 import Popin from '../Popin.js';
 import AuthService from './auth-service.js';
 
 export default class extends React.Component {
-  state = {
+  render (){
+    return(
+      <div>
+        <h1> Devenir membre </h1>
+        <button class="btn"> Log In </button> 
+      </div>
+    )
+  }
+
+  /* state = {
     username: "",
     password: ""
   }
@@ -70,5 +78,5 @@ export default class extends React.Component {
         </>
       )} />
     );
-  }
+  } */
 }
