@@ -8,7 +8,15 @@ import AuthService from './auth-service.js';
 export default class extends React.Component {
   render (){
     return (
-      <h1> Profil</h1>
+      <div>
+        <div className="navbar">
+            <img className="logo" src="/logo.png"/>
+            <img className="menu" src="/menu.svg"/>
+        </div>
+        <div className="content-box">
+          <h1> Profil</h1>
+        </div>
+      </div>  
     )
   };
 }

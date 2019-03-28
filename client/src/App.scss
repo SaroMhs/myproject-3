@@ -1,9 +1,33 @@
-body {background-color:#ffff;}
-
-.App {
-  min-height:100vh;
-  display:flex; align-items:center; justify-content:center;
+html, body {
+  height: 100%;
+  background-color:#ffff;
 }
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 10px;
+}
+.content-box{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 1em;
+}
+
+.content-details{
+  text-align: center;
+}
+
+.favprof{
+  width: 1.5em;
+}
+
+// .App {
+//   min-height:100vh;
+//   display:flex; align-items:center; justify-content:center;
+// }
 
 input,
 button {font:inherit;}
@@ -16,6 +40,28 @@ form {
 }
 
 h1 {color:#000000;}
+
+.logo {
+  display: block;width: 4em;height: 5em;
+  background:url("/logo.png");
+
+  span {display:none;}
+}
+
+.inputbox{
+  background: #F7F7F7;
+  border-radius: 7px;
+  border: none;
+  width: 100%;
+  padding: 1em;
+}
+
+
+
+.menu{
+  width: 3em;
+}
+
 
 /*
                     _       
@@ -57,11 +103,11 @@ h1 {color:#000000;}
 
 .btn {
   display:inline-block;
+  color: #ffff;
   background:#FF507E;
   padding:.85em 4em;
-  border-radius:.25em;
+  border-radius:2em;
   font-weight:bold;
-  font-size:80%;
   text-align:center;
   cursor:pointer;
 }
@@ -110,6 +156,14 @@ a.btn {text-decoration:none; color:inherit;}
 }
 
 /*
+detailsprof
+*/
+
+[data-route="/detailsprof"] {
+
+}
+
+/*
   _             _           __  _                         
  | |           (_)         / / (_)                        
  | | ___   __ _ _ _ __    / /__ _  __ _ _ __  _   _ _ __  
@@ -119,7 +173,7 @@ a.btn {text-decoration:none; color:inherit;}
            __/ |                   __/ |           | |    
           |___/                   |___/            |_|    
 */
-
+/* 
 [data-route="/login"],
 [data-route="/signup"] {
   .btn {background-color:#ffffff;}
@@ -137,4 +191,4 @@ a.btn {text-decoration:none; color:inherit;}
 
   p small {color:gray;}
   p small +.btn {margin-top:1em;}
-}
+} */

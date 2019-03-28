@@ -8,7 +8,42 @@ import AuthService from './auth-service.js';
 export default class extends React.Component {
   render (){
     return (
-      <h1> Sign Up</h1>
+      <div>
+        <div className="navbar">
+
+          <img className="logo" src="/logo.png"/>
+          <img className="menu" src="/menu.svg"/>
+
+        </div>
+
+        <div className="content-box">
+            <h1> Devenez membre </h1>
+            <form action="/login" method="POST" id="">
+              <div>
+                <label for="prenom"></label>
+                <input className="inputbox" id="prenom" type="text" name="prenom" placeholder="Prénom"/>
+              </div>
+              <br/>
+              <div>
+                <label for="nom"></label>
+                <input className="inputbox" id="nom" type="text" name="nom" placeholder="Nom"/>
+              </div>
+              <br/>
+              <div>
+                <label for="email"></label>
+                <input className="inputbox" id="email" type="text" name="email" placeholder="Email"/>
+              </div>
+              <br/>
+              <div>
+                <label for="password"></label>
+                <input className="inputbox" id="password" type="password" name="password" placeholder="Mot de passe"/>
+              </div>
+
+            </form>
+            <br/>
+            <button className="btn">S'inscrire</button>
+        </div>
+      </div>
     )
   };
   /* state = {
