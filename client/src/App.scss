@@ -1,6 +1,7 @@
 html, body {
   height: 100%;
   background-color:#ffff;
+  font-family: OpenSans, sans-serif;
 }
 
 .navbar {
@@ -8,16 +9,6 @@ html, body {
   justify-content: space-between;
   align-items: center;
   margin: 0 10px;
-}
-.content-box{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin: 1em;
-}
-
-.content-details{
-  text-align: center;
 }
 
 .favprof{
@@ -56,10 +47,8 @@ h1 {color:#000000;}
   padding: 1em;
 }
 
-
-
 .menu{
-  width: 3em;
+  width: 2em;
 }
 
 
@@ -104,9 +93,10 @@ h1 {color:#000000;}
 .btn {
   display:inline-block;
   color: #ffff;
-  background:#FF507E;
+  background:#fa6484;
+  width: 100%;
   padding:.85em 4em;
-  border-radius:2em;
+  border-radius:7px;
   font-weight:bold;
   text-align:center;
   cursor:pointer;
@@ -128,13 +118,85 @@ a.btn {text-decoration:none; color:inherit;}
 */
 
 [data-route="/"] {
+  .content-box{
+    margin:1em;
+  }
   .popin__one {
     display:flex; flex-direction:column;
     .cta {margin-top:auto; margin-bottom:0;}
   }
+  .content-box-prof{
+    display:inline-block;
+    color: #ffff;
+    background-image: linear-gradient(136deg, #fda59d, #fa6484);
+    box-shadow : 0px 40px 30px -30px #fa658499;
+    padding:.85em 4em;
+    border-radius:7px;
+    text-align:center;
+    cursor:pointer;
+  }
+  .btn{
+    display:inline-block;
+    color: #ffff;
+    background:#fa6484;
+    width: 100%;
+    padding:.85em 4em;
+    border-radius:7px;
+    font-weight:bold;
+    text-align:center;
+    cursor:pointer;
+    margin-bottom: 1em;
+    margin-top: 1em;
+  }
 
-  p em {font-style:normal; color:gray;}
-  p em +span {display:block; font-size:150%;}
+  .btn-prof{
+    display:inline-block;
+    color:#fa6484;
+    background:#ffffff;
+    width: 100%;
+    padding:.85em 4em;
+    border-radius:7px;
+    font-weight:bold;
+    text-align:center;
+    cursor:pointer;
+    margin-bottom: 1em;
+    margin-top: 1em;
+  }
+
+  h3{
+    font-size: 1.5em;
+  }
+
+  h5{
+    margin: 0;
+    font-size: 3em;
+  }
+
+  button.btn {
+    border:inherit;
+  }
+  a.btn {text-decoration:none; color:inherit;}
+
+  .profpicture{
+    width: 10em;
+    border-radius: 100%;
+  }
+
+  .prof-example{
+    display: flex;
+    justify-content: space-between;
+    margin: 2.5em 0;
+    p{
+      text-align: center;
+      font-family: OpenSans, sans-serif;
+      color:#444;
+      font-weight: 600;
+      margin-top: 0;
+    }
+  }
+
+  //p em {font-style:normal; color:gray;}
+  //p em +span {display:block; font-size:150%;}
 
   .btn.logout {background-color:transparent;color:red;}
 
@@ -160,7 +222,24 @@ detailsprof
 */
 
 [data-route="/detailsprof"] {
+  .content-box{
+    text-align: center;
+  }
+  .favprof{
+    width: 1.5em;
+    padding-bottom: 1em;
+  }
+  .inputbox{
+    background: #F7F7F7;
+    border-radius: 7px;
+    border: none;
+    width: 100%;
+    padding: 1em;
+  }
 
+  .profpicture{
+    border-radius: 100%;
+  }
 }
 
 /*
@@ -173,9 +252,27 @@ detailsprof
            __/ |                   __/ |           | |    
           |___/                   |___/            |_|    
 */
-/* 
+
 [data-route="/login"],
 [data-route="/signup"] {
+  .content-box{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 1em;
+  .inputbox{
+    background: #F7F7F7;
+    border-radius: 7px;
+    border: none;
+    width: 100%;
+    padding: 1em;
+  }
+  .form-box{
+    width: 100%;
+  }
+
+}
+
   .btn {background-color:#ffffff;}
 
   .popin__one h1 {margin-top:0;}
@@ -191,4 +288,67 @@ detailsprof
 
   p small {color:gray;}
   p small +.btn {margin-top:1em;}
-} */
+} 
+
+/*
+Tableau de bord  
+*/
+
+[data-route="/board"] {
+  .content-box{
+    background: #F7F7F7;
+    padding: 2em;
+  }
+
+  h1{
+    font-size: 1em;
+    color: #444;
+  }
+  
+  .edit-logo{
+    margin-top: 2em;
+  }
+
+  .userinfos{
+    background: #ffffff;
+    text-align: center;
+    padding-bottom: 1em;
+    border-radius: 3em;
+    margin-bottom: 2em;
+  }
+
+  h4{
+    color: #b1b1b1;
+  }
+
+  .content-box-infos{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 2em;
+  }
+
+  .userannonce{
+    background: #ffffff;
+    padding: 1em;
+    border-radius: 2em;
+    width: 100%;
+  }
+
+  .infosg{
+    padding: 1em;
+    background: #ffffff;
+    border-radius: 2em;
+  }
+
+  .adresse{
+    padding: 1em;
+    background: #ffffff;
+    border-radius: 2em;
+  }
+
+  p{
+    color: #444;
+    font-weight: 600;
+  }
+}
+

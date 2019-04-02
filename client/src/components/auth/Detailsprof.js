@@ -17,27 +17,17 @@ export default class extends React.Component {
           </form>
           <img className="menu" src="/menu.svg"/>
         </div>
-        <div className="content-details">
+        <div className="content-box">
           <div className="favinfo">
             <h4>Paris 75008</h4>
             <img className="favprof" src="./favprof.png"/>
           </div>
-         
+          <img className="profpicture" src="/prof/français.png" height="300"/>
+          <h1> Alice </h1>
+          <h2>Parcours </h2>
+          <p>Blablabla avec les expériences </p>
 
-
-
-
-
-          <h1> Programmer</h1>
-          <h2> votre premier cours avec Charles </h2>
-          <h3>Quelle est la matière du cours ? </h3>
-
-          <form action="/login" method="POST" id="">
-            <div>
-              <label for="wanteddate"></label>
-              <input className="inputbox" id="wanteddate" type="text" name="wanteddate" placeholder="Choisis ton jour"/>
-            </div>
-          </form>
+          <button className="btn">Reserver un cours</button>
 
         </div>
       </div>

@@ -13,7 +13,7 @@ export default class extends React.Component {
             <img className="logo" src="/logo.png"/>
             <img className="menu" src="/menu.svg"/>
         </div>
-        <div className="content-box">
+        <div className="">
           <h1> Profil</h1>
         </div>
       </div>  

@@ -15,7 +15,7 @@ export default class extends React.Component {
 
         <div className="content-box">
         <h1> Connectez-vous </h1>
-          <form action="/login" method="POST" id="">
+          <form action="/login" method="POST" id="" className="form-box">
             <div>
               <label for="email"></label>
               <input className="inputbox" id="email" type="text" name="email" placeholder="Email"/>

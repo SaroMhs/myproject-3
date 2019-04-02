@@ -12,6 +12,8 @@ import AuthService from './components/auth/auth-service.js';
 import Detailsprof from './components/auth/Detailsprof';
 import Myprofil from './components/auth/Myprofil';
 import Board from './components/auth/Board';
+import Reservation from './components/auth/Reservation';
+import Homepage from './components/auth/Homepage'
 
 class App extends Component {
   /* state = {
@@ -44,7 +46,7 @@ class App extends Component {
 
           <Switch>
             <Route exact path="/" render={() => (
-              <h1>Home Page </h1>
+              <Homepage/>
             )} />
 
             <Route exact path="/signup" render={(props) => (
@@ -61,6 +63,10 @@ class App extends Component {
 
             <Route exact path="/myprofil" render={(props) => (
               <Myprofil/>
+            )} />
+
+            <Route exact path="/reservation" render={(props) => (
+              <Reservation/>
             )} />
 
             <Route exact path="/board" render={(props) => (
