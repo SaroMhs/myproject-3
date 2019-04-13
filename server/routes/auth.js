@@ -2,12 +2,15 @@ const express = require("express");
 const passport = require('passport');
 const router = express.Router();
 const User = require("../models/User");
+const ensureLogin = require("connect-ensure-login");
+const mongoose = require('mongoose');
+const Cours = require ("../models/Cours");
 
 // Bcrypt to encrypt passwords
 const bcrypt = require("bcrypt");
 const bcryptSalt = 10;
 
-
+// ROUTES AUTHENTIFICATION
 router.get("/login", (req, res, next) => {
   res.render("auth/login", { "message": req.flash("error") });
 });
@@ -41,19 +44,21 @@ router.get("/signup", (req, res, next) => {
   res.render("auth/signup");
 });
 
-
 router.post("/signup", (req, res, next) => {
-  const username = req.body.username;
+  const firstName = req.body.firstName;
+  const lastName = req.body.lastName;
+  const email = req.body.email;
+  const status = req.body.status;
   const password = req.body.password;
 
-  if (!username || !password) {
-    res.status(400).json({message: "Indicate username and password"});
+  if (!firstName || !lastName || !email || !status || !password) {
+    res.status(400).json({message: "Fill in all information"});
     return;
   }
 
-  User.findOne({ username }, "username", (err, user) => {
+  User.findOne({ email }, "email", (err, user) => {
     if (user !== null) {
-      res.status(400).json({ message: "The username already exists" });
+      res.status(400).json({ message: "This email already exists" });
       return;
     }
 
@@ -61,7 +66,10 @@ router.post("/signup", (req, res, next) => {
     const hashPass = bcrypt.hashSync(password, salt);
 
     const newUser = new User({
-      username,
+      firstName,
+      lastName,
+      email,
+      status,
       password: hashPass
     });
 
@@ -96,6 +104,51 @@ router.get("/loggedin", (req, res, next) => {
   res.status(403).json({message: 'Unauthorized'});
 });
 
+// GET --> Profile
+router.get("/profile/:id", ensureLogin.ensureLoggedIn(), (req,res,next)=>{
+  if(!mongoose.Types.ObjectId.isValid(req.params.id)) {
+    res.status(400).json({message: "This userId is not valid"})
+  };
+
+  User.findById(req.params.id)
+  .then(response => {
+    res.json(response)
+  })
+  
+});
+
+// GET --> All Profile
+
+// POST -> Cours
+router.post("/course", ensureLogin.ensureLoggedIn(),(req, res, next) => {
+  const dateDebut = req.body.dateDebut;
+  const dateFin = req.body.dateFin;
+  const matiere = req.body.matiere;
+  const description = req.body.description;
+  const userId = req.user._id
+
+
+  const newCours = new Cours({
+    dateDebut,
+    dateFin,
+    matiere,
+    description,
+    userId
+  });
+
+  if (!dateDebut || !dateFin || !matiere || !description) {
+    res.status(400).json({message: "Fill in all information"});
+    return;
+  };
+  newCours.save()
+  .then(response => {
+    res.json(response)
+  })
+
+});
+
+
+// PUT -> Update profile
 router.post("/edit", (req, res, next) => {
   // Check user is logged in
   if (!req.isAuthenticated()) {

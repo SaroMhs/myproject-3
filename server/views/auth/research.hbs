@@ -1,0 +1,19 @@
+
+<h2>Research</h2>
+
+<form action="/auth/research" method="POST" id="form-container">
+  <label for="matiere">Matiere</label>
+  <input id="matiere" type="text" name="matiere" placeholder="maths">
+
+  <br><br>
+
+  <label for="date">Date</label>
+  <input id="date" type="date" name="date" placeholder="date">
+  <br>
+  {{#if message }}
+    <div class="error-message">{{ message }}</div>
+  {{/if}}
+
+  <br><br>
+
+</form>
